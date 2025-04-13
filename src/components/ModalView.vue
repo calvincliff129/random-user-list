@@ -19,9 +19,9 @@ const emit = defineEmits<{
 
 <template>
     <!-- Overlay -->
-    <div class="fixed inset-0 backdrop:bg-black/50 flex items-center justify-center z-50">
+    <div class="fixed inset-0 bg-black/20 flex items-center justify-center z-50">
         <!-- Modal Content -->
-        <div class="bg-white rounded-lg p-6 w-full max-w-md relative">
+        <div class="bg-white shadow rounded-lg p-6 w-full max-w-md relative">
             <!-- Close Button -->
             <button @click="emit('close')" class="absolute top-4 right-4 text-gray-400 cursor-pointer hover:text-gray-600 text-xl">
                 &times;
