@@ -30,6 +30,7 @@ export const useUserStore = defineStore("userStore", () => {
         email: user.email,
         date: new Date(user.registered.date).toISOString(),
         status: user.status,
+        picture: user.picture.medium,
       }));
     } catch (e) {
       console.error("Error fetching users:", e);
@@ -51,7 +52,7 @@ export const useUserStore = defineStore("userStore", () => {
       const query = searchQuery.value.toLowerCase();
       filtered = filtered.filter(
         (u) =>
-          format(u.date, 'dd MMM yyyy').toString().toLowerCase().includes(query) ||
+          format(u.date, "dd MMM yyyy").toString().toLowerCase().includes(query) ||
           u.name.toLowerCase().includes(query) ||
           u.gender.toLowerCase().includes(query) ||
           u.country.toLowerCase().includes(query) ||
