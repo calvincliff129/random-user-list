@@ -50,7 +50,7 @@ const refresh = () => {
         <!-- Table Header -->
         <div class="grid grid-cols-5 text-sm capitalize text-gray-400 font-medium mb-4 px-6">
             <div v-for="col in columns" :key="col" @click="sortColumn(col)"
-                class="cursor-pointer select-none hover:text-[#4EBBD8] transition-colors">
+                class="cursor-pointer select-none hover:text-[#4EBBD8] transition-colors last:text-end">
                 {{ col }}
                 <span v-if="userStore.sortKey === col">
                     {{ userStore.sortAsc ? '▲' : '▼' }}
@@ -67,7 +67,7 @@ const refresh = () => {
                 <div class="text-sm font-semibold text-gray-700 group-hover:text-[#4EBBD8]">{{ user.name }}</div>
                 <div class="text-sm text-gray-500 group-hover:text-gray-700">{{ user.gender }}</div>
                 <div class="text-sm text-gray-700">{{ user.country }}</div>
-                <div class="text-sm text-gray-500 truncate">{{ user.email }}</div>
+                <div class="text-sm text-gray-500 truncate text-end">{{ user.email }}</div>
             </div>
         </div>
 
