@@ -61,7 +61,7 @@ const refresh = () => {
         <!-- Scrollable Rows -->
         <div class="max-h-[400px] overflow-y-auto space-y-3">
             <div v-for="(user, index) in users" :key="index"
-                class="group grid grid-cols-5 items-center px-6 py-4 rounded cursor-pointer hover:border hover:border-[#4EBBD8] bg-white shadow"
+                class="group grid grid-cols-5 items-center px-6 py-4 rounded cursor-pointer border border-white hover:border hover:border-[#4EBBD8] bg-white shadow/20"
                 @click="userStore.selectUser(user)">
                 <div class="text-sm text-gray-500">{{ format(user!.date, 'dd MMM yyyy') }}</div>
                 <div class="text-sm font-semibold text-gray-700 group-hover:text-[#4EBBD8]">{{ user.name }}</div>
