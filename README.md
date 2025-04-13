@@ -13,6 +13,7 @@ This is a web application built for the front-end assignment, displaying a list 
 ## Tech Stack
 
 - **Framework**: Vue.js (Vue3)
+- **State Management**: Pinia
 - **Styling**: Tailwind CSS
 - **API**: Random User API
 - **Build Tool**: Vite
