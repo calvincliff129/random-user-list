@@ -42,7 +42,7 @@ const refresh = () => {
 </script>
 
 <template>
-    <div class="max-w-7xl mx-auto mt-10 px-4">
+    <div class="max-w-7xl mx-auto mt-10">
         <!-- Search -->
         <input v-model="userStore.searchQuery" placeholder="Search users..."
             class="mb-6 w-full border border-[#4EBBD8] appearance-none px-4 py-2 rounded shadow-sm" />
@@ -59,9 +59,9 @@ const refresh = () => {
         </div>
 
         <!-- Scrollable Rows -->
-        <div class="max-h-[400px] overflow-y-auto space-y-3 pr-1">
+        <div class="max-h-[400px] overflow-y-auto space-y-3">
             <div v-for="(user, index) in users" :key="index"
-                class="group grid grid-cols-5 items-center px-6 py-4 rounded transition-all cursor-pointer hover:border hover:border-[#4EBBD8] bg-white shadow-sm"
+                class="group grid grid-cols-5 items-center px-6 py-4 rounded cursor-pointer hover:border hover:border-[#4EBBD8] bg-white shadow"
                 @click="userStore.selectUser(user)">
                 <div class="text-sm text-gray-500">{{ format(user!.date, 'dd MMM yyyy') }}</div>
                 <div class="text-sm font-semibold text-gray-700 group-hover:text-[#4EBBD8]">{{ user.name }}</div>
