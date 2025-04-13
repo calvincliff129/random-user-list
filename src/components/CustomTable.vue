@@ -42,32 +42,38 @@ const refresh = () => {
 </script>
 
 <template>
-    <div class="max-w-7xl mx-auto mt-10 px-4 xl:px-0">
+    <div class="max-w-7xl mx-auto mt-10 px-4 xl:px-0 overflow-hidden">
         <!-- Search -->
         <input v-model="userStore.searchQuery" placeholder="Search users..."
             class="mb-6 w-full border border-[#4EBBD8] appearance-none px-4 py-2 rounded shadow-sm" />
 
-        <!-- Table Header -->
-        <div class="grid grid-cols-5 text-sm capitalize text-gray-400 font-medium mb-4 px-6">
-            <div v-for="col in columns" :key="col" @click="sortColumn(col)"
-                class="cursor-pointer select-none hover:text-[#4EBBD8] transition-colors last:text-end">
-                {{ col }}
-                <span v-if="userStore.sortKey === col">
-                    {{ userStore.sortAsc ? '▲' : '▼' }}
-                </span>
-            </div>
-        </div>
+        <!-- Horizontal Scroll Wrapper on smaller screens -->
+        <div class="w-full overflow-x-auto">
+            <div class="min-w-[640px]">
+                <!-- Table Header -->
+                <div class="grid grid-cols-5 text-sm capitalize text-gray-400 font-medium mb-4 px-6">
+                    <div v-for="col in columns" :key="col" @click="sortColumn(col)"
+                        class="cursor-pointer select-none hover:text-[#4EBBD8] transition-colors last:text-end">
+                        {{ col }}
+                        <span v-if="userStore.sortKey === col">
+                            {{ userStore.sortAsc ? '▲' : '▼' }}
+                        </span>
+                    </div>
+                </div>
 
-        <!-- Scrollable Rows -->
-        <div class="max-h-[400px] overflow-y-auto space-y-3">
-            <div v-for="(user, index) in users" :key="index"
-                class="group grid grid-cols-5 items-center px-6 py-4 rounded cursor-pointer border border-white hover:border hover:border-[#4EBBD8] bg-white shadow-xs"
-                @click="userStore.selectUser(user)">
-                <div class="text-sm text-gray-500">{{ format(user!.date, 'dd MMM yyyy') }}</div>
-                <div class="text-sm font-semibold text-gray-700 group-hover:text-[#4EBBD8]">{{ user.name }}</div>
-                <div class="text-sm text-gray-500 group-hover:text-gray-700">{{ user.gender }}</div>
-                <div class="text-sm text-gray-700">{{ user.country }}</div>
-                <div class="text-sm text-gray-500 truncate text-end">{{ user.email }}</div>
+                <!-- Scrollable Rows (vertical only) -->
+                <div class="max-h-[400px] overflow-y-auto space-y-3">
+                    <div v-for="(user, index) in users" :key="index"
+                        class="group grid grid-cols-5 items-center px-6 py-4 rounded cursor-pointer border border-white hover:border hover:border-[#4EBBD8] bg-white shadow-xs"
+                        @click="userStore.selectUser(user)">
+                        <div class="text-sm text-gray-500">{{ format(user.date, 'dd MMM yyyy') }}</div>
+                        <div class="text-sm font-semibold text-gray-700 group-hover:text-[#4EBBD8] truncate">{{
+                            user.name }}</div>
+                        <div class="text-sm text-gray-500 group-hover:text-gray-700">{{ user.gender }}</div>
+                        <div class="text-sm text-gray-700 truncate">{{ user.country }}</div>
+                        <div class="text-sm text-gray-500 truncate text-end">{{ user.email }}</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -81,6 +87,5 @@ const refresh = () => {
         <div class="text-center text-sm text-gray-400 mt-2">
             Page {{ userStore.currentPage }} / {{ userStore.totalPages }}
         </div>
-
     </div>
 </template>
