@@ -9,13 +9,10 @@ const onlineStatus = ref('Last online: 2 days ago')
 <template>
     <div class="relative flex justify-center items-end bg-[#4EBBD8] gap-2 py-2 h-36 text-white">
         <div
-            class="flex flex-row items-end justify-start sm:flex-row sm:items-start gap-4 w-full max-w-7xl">
-            <!-- Avatar Overlapping Bottom -->
-            <div class="-mb-8">
-                <img alt="Kiratech logo" class="rounded w-32 h-32" src="@/assets/Avatar.png" />
-            </div>
+            class="flex flex-row items-end justify-start sm:flex-row sm:items-start gap-4 w-full max-w-7xl h-full -mb-8">
+            <img alt="Kiratech logo" class="rounded w-32 h-32" src="@/assets/Avatar.png" />
 
-            <div class="flex flex-row justify-end items-end sm:items-start gap-6 h-full">
+            <div class="flex flex-row justify-end items-center gap-6 h-full">
                 <div class="flex flex-col">
                     <h2 class="text-3xl font-bold">{{ userName }}</h2>
                     <p class="text-xs font-light">{{ onlineStatus }}</p>
