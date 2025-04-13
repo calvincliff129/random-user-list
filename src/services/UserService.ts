@@ -1,6 +1,6 @@
 export class UserService {
   
-  // get list of new offer meetings
+  // get list of new random users
   static async getRandomUserList(page: number) {
     const url: string = `https://randomuser.me/api/?page=${page}&results=20`;
 
