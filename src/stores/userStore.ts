@@ -22,12 +22,14 @@ export const useUserStore = defineStore("userStore", () => {
   const currentPage = ref(1);
   const totalPages = ref(50); // For visual pagination, even if RandomUser API is random
 
+  // Fetches user data from the RandomUser API based on the specified page
   const fetchUsers = async (page = 1) => {
     isLoading.value = true;
     try {
       const res = await fetch(`https://randomuser.me/api/?page=${page}&results=20`);
       const data = await res.json();
 
+      // Transforms API response into an array of User objects
       users.value = data.results.map((user: any) => ({
         name: `${user.name.first} ${user.name.last}`,
         gender: user.gender,
@@ -43,9 +45,12 @@ export const useUserStore = defineStore("userStore", () => {
     }
   };
 
+  // Sets the selected user to the provided User object for popup viewing
   const selectUser = (user: User) => (selectedUser.value = user);
+  // Clears the selected user, also for closing popup
   const clearSelectedUser = () => (selectedUser.value = null);
 
+  // Computes a filtered and sorted list of users based on search and sort criteria
   const filteredAndSortedUsers = computed(() => {
     let filtered = users.value;
 
@@ -72,6 +77,7 @@ export const useUserStore = defineStore("userStore", () => {
     return filtered;
   });
 
+  // Pagination functions and fetches new users
   const nextPage = () => {
     currentPage.value++;
     fetchUsers(currentPage.value);
