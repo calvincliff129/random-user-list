@@ -24,8 +24,8 @@ This is a web application built for the front-end assignment, displaying a list 
 
 ## Clone the Repository:
    ```sh
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/calvincliff129/random-user-list.git
+   cd into the clone folder
    ```
 
 ## Project Setup
@@ -38,4 +38,5 @@ npm install
 
 ```sh
 npm run dev
+copy and paste the url to the browser
 ```
