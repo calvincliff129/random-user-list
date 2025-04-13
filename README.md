@@ -3,6 +3,7 @@
 This is a web application built for the front-end assignment, displaying a list of users fetched from the Random User API (`https://randomuser.me/api/?results=20`). The app includes a user list with refresh functionality, a detailed user view popup, and search/sorting/pagination.
 
 ## Features
+
 - Displays a list of users with key details (e.g., name, email, location).
 - Refresh button to reload user data from the API.
 - Click a user to view detailed information in a popup.
@@ -10,6 +11,7 @@ This is a web application built for the front-end assignment, displaying a list 
 - Responsive design styled with Tailwind CSS, closely following the provided Figma prototype.
 
 ## Tech Stack
+
 - **Framework**: Vue.js (Vue3)
 - **Styling**: Tailwind CSS
 - **API**: Random User API
@@ -17,26 +19,28 @@ This is a web application built for the front-end assignment, displaying a list 
 - **Package Manager**: npm
 
 ## Prerequisites
+
 - **Node.js**: Version 16.x or higher
 - **npm**: Version 8.x or higher
 
 ## Setup and Installation
 
-## Clone the Repository:
-   ```sh
-   git clone https://github.com/calvincliff129/random-user-list.git
-   cd into the clone folder
-   ```
+- **Clone the Repository**
 
-## Project Setup
+```sh
+git clone https://github.com/calvincliff129/random-user-list.git
+cd into the clone folder
+```
+
+- **Project Setup**
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+- **Compile and Hot-Reload for Development**
 
 ```sh
 npm run dev
-copy and paste the url to the browser
+copy and paste the url into the browser
 ```
