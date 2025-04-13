@@ -25,22 +25,22 @@ This is a web application built for the front-end assignment, displaying a list 
 
 ## Setup and Installation
 
-- **Clone the Repository**
+1. **Clone the Repository**
 
-```sh
+```
 git clone https://github.com/calvincliff129/random-user-list.git
 cd into the clone folder
 ```
 
-- **Project Setup**
+2. **Project Setup**
 
-```sh
+```
 npm install
 ```
 
-- **Compile and Hot-Reload for Development**
+3. **Compile and Hot-Reload for Development**
 
-```sh
+```
 npm run dev
 copy and paste the url into the browser
 ```
