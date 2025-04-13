@@ -34,16 +34,22 @@ const resolvedIcon = computed(() => (props.icon ? iconMap[props.icon] : null))
 
 const buttonClass = computed(() =>
     buttonType.value === 'primary'
-        ? 'text-[#4EBBD8] bg-white fill-[#4EBBD8] hover:fill-white hover:bg-[#4EBBD8] hover:text-white'
-        : 'text-white bg-[#4EBBD8] fill-white hover:fill-[#4EBBD8] hover:bg-white hover:text-[#4EBBD8]'
+        ? 'text-[#4EBBD8] bg-white hover:bg-[#4EBBD8] hover:text-white'
+        : 'text-white bg-[#4EBBD8] hover:bg-white hover:text-[#4EBBD8]'
+)
+
+const iconClass = computed(() =>
+    buttonType.value === 'primary'
+        ? 'fill-[#4EBBD8] group-hover:fill-white'
+        : 'fill-white group-hover:fill-[#4EBBD8]'
 )
 </script>
 
 <template>
     <button @click="(e) => emit('click', e)"
-        :class="`flex flex-row gap-2 justify-center items-center cursor-pointer outline rounded py-2 px-4 ${buttonClass}`">
+        :class="`group flex flex-row gap-2 justify-center items-center cursor-pointer outline rounded py-2 px-4 ${buttonClass}`">
         <!-- Render the component from icon map -->
-        <component v-if="resolvedIcon" :is="resolvedIcon" class="w-4 h-4" />
+        <component v-if="resolvedIcon" :is="resolvedIcon" :class="`w-4 h-4 ${iconClass}`" />
         <slot />
         {{ title }}
     </button>
