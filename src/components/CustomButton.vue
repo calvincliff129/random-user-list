@@ -41,7 +41,7 @@ const buttonClass = computed(() =>
 
 <template>
     <button @click="(e) => emit('click', e)"
-        :class="`flex flex-row gap-2 justify-center items-center outline rounded py-2 px-4 ${buttonClass}`">
+        :class="`flex flex-row gap-2 justify-center items-center cursor-pointer outline rounded py-2 px-4 ${buttonClass}`">
         <!-- Render the component from icon map -->
         <component v-if="resolvedIcon" :is="resolvedIcon" class="w-4 h-4" />
         <slot />
