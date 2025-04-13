@@ -1,4 +1,5 @@
 import type { User } from "@/models/UserModel";
+import UserService from "@/services/UserService";
 import { format } from "date-fns";
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
@@ -18,9 +19,9 @@ export const useUserStore = defineStore("userStore", () => {
   // Fetches user data from the RandomUser API based on the specified page
   const fetchUsers = async (page = 1) => {
     isLoading.value = true;
+    
     try {
-      const res = await fetch(`https://randomuser.me/api/?page=${page}&results=20`);
-      const data = await res.json();
+      const data = await UserService.getRandomUserList(page);
 
       // Transforms API response into an array of User objects
       users.value = data.results.map((user: any) => ({
