@@ -1,18 +1,32 @@
-# kiratech-user-management
+# Front-End Assignment: Random User List
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a web application built for the front-end assignment, displaying a list of users fetched from the Random User API (`https://randomuser.me/api/?results=20`). The app includes a user list with refresh functionality, a detailed user view popup, and search/sorting/pagination.
 
-## Recommended IDE Setup
+## Features
+- Displays a list of users with key details (e.g., name, email, location).
+- Refresh button to reload user data from the API.
+- Click a user to view detailed information in a popup.
+- Search functionality to filter users by name or other fields.
+- Responsive design styled with Tailwind CSS, closely following the provided Figma prototype.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Tech Stack
+- **Framework**: Vue.js (Vue3)
+- **Styling**: Tailwind CSS
+- **API**: Random User API
+- **Build Tool**: Vite
+- **Package Manager**: npm
 
-## Type Support for `.vue` Imports in TS
+## Prerequisites
+- **Node.js**: Version 16.x or higher
+- **npm**: Version 8.x or higher
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Setup and Installation
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Clone the Repository:
+   ```sh
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
 
 ## Project Setup
 
@@ -24,16 +38,4 @@ npm install
 
 ```sh
 npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
