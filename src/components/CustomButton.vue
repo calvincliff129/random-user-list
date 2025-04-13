@@ -22,7 +22,7 @@ const emit = defineEmits<{
 
 const buttonType = computed(() => props.type ?? 'primary')
 
-// 👇 map string to component
+// map string to component
 const iconMap: Record<IconOptions, any> = {
     refresh: RefreshIcon,
     bell: BellIcon,
