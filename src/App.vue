@@ -1,47 +1,24 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import HeaderSection from './components/HeaderSection.vue'
+import ProfileSection from './components/ProfileSection.vue'
+import CustomTable from './components/CustomTable.vue'
+import ModalView from './components/ModalView.vue'
+import { useUserStore } from '@/stores/userStore'
+
+const userStore = useUserStore()
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <HeaderSection />
   </header>
 
   <main>
-    <TheWelcome />
+    <ProfileSection />
+    <CustomTable />
   </main>
+
+  <!-- Modal view for selected user -->
+  <ModalView v-if="userStore.selectedUser" :user="userStore.selectedUser" @close="userStore.clearSelectedUser()" />
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
