@@ -1,15 +1,9 @@
 <script setup lang="ts">
+import type { User } from '@/models/UserModel';
 import { format } from 'date-fns'
 
 defineProps<{
-    user: {
-        name: string
-        gender: string
-        country: string
-        email: string
-        date: Date
-        status: string
-    } | null
+    user: User | null
 }>()
 
 const emit = defineEmits<{

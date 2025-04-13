@@ -1,14 +1,6 @@
+import type { User } from "@/models/UserModel";
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
-
-export type User = {
-  name: string;
-  gender: string;
-  country: string;
-  email: string;
-  date: Date;
-  status: string;
-};
 
 export const useUserStore = defineStore("userStore", () => {
   const users = ref<User[]>([]);
@@ -16,7 +8,7 @@ export const useUserStore = defineStore("userStore", () => {
   const isLoading = ref(false);
 
   const searchQuery = ref("");
-  const sortKey = ref<keyof User | "">("");
+  const sortKey = ref<keyof User | string | "">("");
   const sortAsc = ref(true);
 
   const currentPage = ref(1);
@@ -59,8 +51,9 @@ export const useUserStore = defineStore("userStore", () => {
       filtered = filtered.filter(
         (u) =>
           u.name.toLowerCase().includes(query) ||
-          u.email.toLowerCase().includes(query) ||
-          u.country.toLowerCase().includes(query)
+          u.gender.toLowerCase().includes(query) ||
+          u.country.toLowerCase().includes(query) ||
+          u.email.toLowerCase().includes(query)
       );
     }
 
