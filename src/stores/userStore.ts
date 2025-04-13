@@ -30,7 +30,7 @@ export const useUserStore = defineStore("userStore", () => {
         email: user.email,
         date: new Date(user.registered.date).toISOString(),
         status: user.status,
-        picture: user.picture.medium,
+        picture: user.picture.large,
       }));
     } catch (e) {
       console.error("Error fetching users:", e);
