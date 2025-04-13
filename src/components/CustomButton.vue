@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineProps } from 'vue'
+import { computed, defineProps, type Component } from 'vue'
 
 // SVG components
 import RefreshIcon from './icons/RefreshIcon.vue'
@@ -23,7 +23,7 @@ const emit = defineEmits<{
 const buttonType = computed(() => props.type ?? 'primary')
 
 // map string to component
-const iconMap: Record<IconOptions, any> = {
+const iconMap: Record<IconOptions, Component> = {
     refresh: RefreshIcon,
     bell: BellIcon,
     share: ShareIcon,
