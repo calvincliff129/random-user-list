@@ -1,4 +1,5 @@
 import type { User } from "@/models/UserModel";
+import { format } from "date-fns";
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 
@@ -27,7 +28,7 @@ export const useUserStore = defineStore("userStore", () => {
         gender: user.gender,
         country: user.location.country,
         email: user.email,
-        date: new Date().toISOString(),
+        date: new Date(user.registered.date).toISOString(),
         status: user.status,
       }));
     } catch (e) {
@@ -50,6 +51,7 @@ export const useUserStore = defineStore("userStore", () => {
       const query = searchQuery.value.toLowerCase();
       filtered = filtered.filter(
         (u) =>
+          format(u.date, 'dd MMM yyyy').toString().toLowerCase().includes(query) ||
           u.name.toLowerCase().includes(query) ||
           u.gender.toLowerCase().includes(query) ||
           u.country.toLowerCase().includes(query) ||
