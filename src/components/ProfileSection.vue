@@ -7,7 +7,7 @@ const onlineStatus = ref('Last online: 2 days ago')
 </script>
 
 <template>
-    <div class="relative flex justify-center items-end bg-[#4EBBD8] gap-2 py-4 md:py-2 min-h-36 h-fit text-white">
+    <div class="relative flex justify-center items-end bg-[#4EBBD8] px-4 xl:px-0 gap-2 py-4 md:py-2 min-h-36 h-fit text-white">
         <div
             class="flex flex-col md:flex-row items-center md:items-center justify-start gap-4 w-full max-w-7xl h-full md:-mb-8">
             <img alt="Kiratech logo" class="rounded w-32 h-32" src="@/assets/Avatar.png" />

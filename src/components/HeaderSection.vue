@@ -5,7 +5,7 @@ import LogOutIcon from '@/components/icons/LogOutIcon.vue'
 </script>
 
 <template>
-    <div class="flex flex-row justify-between items-center max-w-7xl w-full h-12 mx-auto">
+    <div class="flex flex-row justify-between items-center px-4 xl:px-0 max-w-7xl w-full h-12 mx-auto">
         <!-- Logo (scaled to fit header height) -->
         <img alt="Kiratech logo" src="@/assets/Logo.png" class="h-8 w-auto" />
 

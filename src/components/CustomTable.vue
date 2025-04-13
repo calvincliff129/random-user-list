@@ -42,7 +42,7 @@ const refresh = () => {
 </script>
 
 <template>
-    <div class="max-w-7xl mx-auto mt-10">
+    <div class="max-w-7xl mx-auto mt-10 px-4 xl:px-0">
         <!-- Search -->
         <input v-model="userStore.searchQuery" placeholder="Search users..."
             class="mb-6 w-full border border-[#4EBBD8] appearance-none px-4 py-2 rounded shadow-sm" />
